@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Portfolio</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        /* Increase h2 font size and make bold */
+        h2 {
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+        /* Dark mode styles */
+        body.dark-mode {
+            background: #181a1b;
+            color: #e0e0e0;
+        }
+        body.dark-mode .navbar, body.dark-mode header {
+            background: #23272a;
+        }
+        body.dark-mode .devsite-landing-row-item {
+            background: #23272a !important;
+            color: #fff !important;
+        }
+        body.dark-mode .devsite-landing-row-item-description {
+            background: #23272a !important;
+        }
+        body.dark-mode .devsite-landing-row-item-body {
+            color: #fff !important;
+        }
+        body.dark-mode .devsite-landing-row-item-description-content {
+            color: #fff !important;
+        }
+        body.dark-mode .devsite-landing-row-item h3,
+        body.dark-mode .devsite-landing-row-item a,
+        body.dark-mode .devsite-landing-row-item label,
+        body.dark-mode .devsite-landing-row-item input,
+        body.dark-mode .devsite-landing-row-item textarea {
+            color: #fff !important;
+        }
+        body.dark-mode .devsite-landing-row-item a:visited {
+            color: #b3e5fc !important;
+        }
+        body.dark-mode .devsite-landing-row-item input,
+        body.dark-mode .devsite-landing-row-item textarea {
+            background: #23272a !important;
+            border: 1px solid #444 !important;
+        }
+        body.dark-mode .devsite-landing-row-item button {
+            background: #444 !important;
+            color: #fff !important;
+            border: 1px solid #888 !important;
+        }
+        body.dark-mode .devsite-landing-row-item .additional-links a {
+            color: #b3e5fc !important;
+        }
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        .darkmode-toggle {
+            position: static;
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+        .darkmode-switch {
+            position: relative;
+            display: inline-block;
+            width: 52px;
+            height: 28px;
+        }
+        .darkmode-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 3px;
+            background-color: #fff;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #23272a;
+        }
+        input:checked + .slider:before {
+            transform: translateX(24px);
+        }
+        .slider:after {
+            content: '\1F319'; /* moon emoji */
+            position: absolute;
+            right: 7px;
+            top: 4px;
+            font-size: 1rem;
+            color: #fff;
+            opacity: 0.7;
+        }
+        input:checked + .slider:after {
+            content: '\2600'; /* sun emoji */
+            color: #ffd700;
+            opacity: 0.9;
+        }
+        @media (max-width: 900px) {
+            .darkmode-toggle {
+                right: 5.5rem;
+            }
+            .navbar-logo {
+                gap: 0.7rem;
+            }
+        }
+        @media (max-width: 700px) {
+            .darkmode-toggle {
+                right: 4.5rem;
+                top: 0.7rem;
+            }
+            .navbar-logo {
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="navbar-left">
+                <h1>Data Science Portfolio</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#education">Education & Certifications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="navbar-logo">
+                <a href="#about" title="About">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="About Logo" class="about-logo">
+                </a>
+                <button class="darkmode-toggle" aria-label="Toggle dark mode">
+                    <label class="darkmode-switch">
+                        <input type="checkbox" id="darkModeSlider" onchange="toggleDarkMode()">
+                        <span class="slider"></span>
+                    </label>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="banner">
+            <div class="banner-content">
+                <h2>Welcome to My Data Science Portfolio</h2>
+                <p>Showcasing skills, projects, and achievements in data science, analytics, and machine learning.</p>
+            </div>
+            <div class="banner-image">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Data Science Banner" />
+            </div>
+        </div>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="card-container four-cards">
+                <div class="devsite-landing-row-item" description-position="bottom">
+                    <div class="devsite-landing-row-item-media">
+                        <figure class="devsite-landing-row-item-image">
+                            <picture>
+                                <img alt="SQL" src="/static/images/portfolio_img/sql.jpg" width="72" height="72" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                    <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                        <div class="devsite-landing-row-item-body">
+                            <h3>SQL</h3>
+                            <div class="devsite-landing-row-item-description-content">Structured Query Language for data manipulation and analysis.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="devsite-landing-row-item" description-position="bottom">
+                    <div class="devsite-landing-row-item-media">
+                        <figure class="devsite-landing-row-item-image">
+                            <picture>
+                                <img alt="Python" src="/static/images/portfolio_img/python.jpg" width="72" height="72" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                    <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                        <div class="devsite-landing-row-item-body">
+                            <h3>Python</h3>
+                            <div class="devsite-landing-row-item-description-content">Programming for data science, ML, and automation.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="devsite-landing-row-item" description-position="bottom">
+                    <div class="devsite-landing-row-item-media">
+                        <figure class="devsite-landing-row-item-image">
+                            <picture>
+                                <img alt="R" src="/static/images/portfolio_img/R_image.png" width="72" height="72" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                    <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                        <div class="devsite-landing-row-item-body">
+                            <h3>R</h3>
+                            <div class="devsite-landing-row-item-description-content">Statistical computing and graphics.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="devsite-landing-row-item" description-position="bottom">
+                    <div class="devsite-landing-row-item-media">
+                        <figure class="devsite-landing-row-item-image">
+                            <picture>
+                                <img alt="Power BI" src="/static/images/portfolio_img/power_bi.png" width="72" height="72" loading="lazy">
+                            </picture>
+                        </figure>
+                    </div>
+                    <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                        <div class="devsite-landing-row-item-body">
+                            <h3>Power BI</h3>
+                            <div class="devsite-landing-row-item-description-content">Business intelligence and data visualization.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="card-container">
+                <div class="devsite-landing-row-item" description-position="bottom">
+                    <div class="devsite-landing-row-item-media">
+                        <figure class="devsite-landing-row-item-image">
+                            <a href="#"><picture><img alt="SQL Project" src="/static/images/portfolio_img/sql.jpg" width="72" height="72" loading="lazy"></picture></a>
+                        </figure>
+                    </div>
+                    <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                        <div class="devsite-landing-row-item-body">
+                            <h3><a href="#">SQL Project</a></h3>
+                            <div class="devsite-landing-row-item-description-content">Data warehousing and analytics using SQL Server.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="devsite-landing-row-item" description-position="bottom">
+                    <div class="devsite-landing-row-item-media">
+                        <figure class="devsite-landing-row-item-image">
+                            <a href="#"><picture><img alt="Python Project" src="/static/images/portfolio_img/python.jpg" width="72" height="72" loading="lazy"></picture></a>
+                        </figure>
+                    </div>
+                    <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                        <div class="devsite-landing-row-item-body">
+                            <h3><a href="#">Python Project</a></h3>
+                            <div class="devsite-landing-row-item-description-content">Predictive modeling with scikit-learn and pandas.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="devsite-landing-row-item" description-position="bottom">
+                    <div class="devsite-landing-row-item-media">
+                        <figure class="devsite-landing-row-item-image">
+                            <a href="#"><picture><img alt="R Project" src="/static/images/portfolio_img/R_image.png" width="72" height="72" loading="lazy"></picture></a>
+                        </figure>
+                    </div>
+                    <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                        <div class="devsite-landing-row-item-body">
+                            <h3><a href="#">R Project</a></h3>
+                            <div class="devsite-landing-row-item-description-content">Statistical analysis and visualization in R.</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+        <section id="education">
+            <h2>Education & Certifications</h2>
+            <div class="card-container">
+                <div class="devsite-landing-row-item" description-position="bottom">
+                    <div class="devsite-landing-row-item-media">
+                        <figure class="devsite-landing-row-item-image">
+                            <picture><img alt="Bachelor's Degree" src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" width="72" height="72" loading="lazy"></picture>
+                        </figure>
+                    </div>
+                    <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                        <div class="devsite-landing-row-item-body">
+                            <h3>Bachelor's Degree</h3>
+                            <div class="devsite-landing-row-item-description-content">B.Sc. in Computer Science</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="devsite-landing-row-item" description-position="bottom">
+                    <div class="devsite-landing-row-item-media">
+                        <figure class="devsite-landing-row-item-image">
+                            <picture><img alt="Master's Degree" src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" width="72" height="72" loading="lazy"></picture>
+                        </figure>
+                    </div>
+                    <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                        <div class="devsite-landing-row-item-body">
+                            <h3>Master's Degree</h3>
+                            <div class="devsite-landing-row-item-description-content">M.Sc. in Data Science</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="devsite-landing-row-item" description-position="bottom">
+                    <div class="devsite-landing-row-item-media">
+                        <figure class="devsite-landing-row-item-image">
+                            <picture><img alt="Certifications" src="/static/images/portfolio_img/certificate.png" width="72" height="72" loading="lazy"></picture>
+                        </figure>
+                    </div>
+                    <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                        <div class="devsite-landing-row-item-body">
+                            <h3>Certifications</h3>
+                            <div class="devsite-landing-row-item-description-content">Google Data Analytics, Microsoft Certified: Data Analyst Associate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="about-contact" style="display: flex; gap: 2.5rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+            <div style="flex: 1 1 340px; min-width: 320px; max-width: 500px;">
+                <h2>About</h2>
+                <div class="card-container">
+                    <div class="devsite-landing-row-item" description-position="bottom">
+                        <div class="devsite-landing-row-item-media">
+                            <figure class="devsite-landing-row-item-image">
+                                <picture><img alt="About" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" width="72" height="72" loading="lazy"></picture>
+                            </figure>
+                        </div>
+                        <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                            <div class="devsite-landing-row-item-body">
+                                <div class="devsite-landing-row-item-description-content">Data science professional with a passion for extracting insights from data. Experienced in SQL, Python, R, and BI tools. Interested in machine learning, analytics, and building impactful solutions. Career goal: To lead data-driven projects that make a difference.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="flex: 1 1 340px; min-width: 320px; max-width: 500px;">
+                <h2>Contact</h2>
+                <div class="card-container">
+                    <div class="devsite-landing-row-item" description-position="bottom">
+                        <div class="devsite-landing-row-item-media">
+                            <figure class="devsite-landing-row-item-image">
+                                <picture><img alt="Contact" src="https://cdn-icons-png.flaticon.com/512/561/561127.png" width="72" height="72" loading="lazy"></picture>
+                            </figure>
+                        </div>
+                        <div class="devsite-landing-row-item-description" icon-position="bottom-left">
+                            <div class="devsite-landing-row-item-body">
+                                <form method="post" action="#">
+                                    <label for="name">Name:</label><br>
+                                    <input type="text" id="name" name="name" required><br>
+                                    <label for="email">Email:</label><br>
+                                    <input type="email" id="email" name="email" required><br>
+                                    <label for="message">Message:</label><br>
+                                    <textarea id="message" name="message" rows="4" required></textarea><br>
+                                    <button type="submit">Send</button>
+                                </form>
+                                <div class="additional-links">
+                                    <a href="#">Kaggle</a> |
+                                    <a href="#">GitHub</a> |
+                                    <a href="#">LinkedIn</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Data Science Professional</p>
+    </footer>
+    <script>
+        function toggleDarkMode() {
+            const slider = document.getElementById('darkModeSlider');
+            if(slider.checked) {
+                document.body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                document.body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        }
+        // On load, check preference
+        window.onload = function() {
+            const slider = document.getElementById('darkModeSlider');
+            if(localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                if(slider) slider.checked = true;
+            } else {
+                document.body.classList.remove('dark-mode');
+                if(slider) slider.checked = false;
+            }
+        }
+    </script>
+</body>
+</html>
