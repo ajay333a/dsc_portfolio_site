@@ -14,5 +14,4 @@ and additional links.
 The website should be responsive and visually appealing, with a clean and modern design.
 
 The main page should fit all four skill cards in a single row
-- add a banner element to main page which covers half the screen with any attractive data imagery
-- change Power bi logo .
+- add a banner element to main page which covers half the screen with any attractive data imagery.
